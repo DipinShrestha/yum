@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - FoodExpress</title>
+  <link rel="stylesheet" href="register.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="register.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Floating food images -->
+  <div class="floating-foods">
+    <img src="freg.png" class="food-item" style="top: 10%; left: 5%;" />
+    <img src="freg3.png" class="food-item" style="top: 30%; left: 80%;" />
+    <img src="freg4.png" class="food-item" style="top: 60%; left: 10%;" />
+  </div>
+
+  <header>
+    <h1>Create Your Account</h1>
+  </header>
+
+  <div class="container">
+    <form id="registerForm">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required />
+      </div>
+
+      <div class="form-group">
+        <label for="address">Delivery Address</label>
+        <div style="display: flex; gap: 10px;">
+          <input type="text" id="address" required style="flex: 1;" />
+          <button type="button" class="btn" style="width: auto;" onclick="toggleMap()">📍 Choose on Map</button>
+        </div>
+      </div>
+
+      <div class="form-group" id="mapContainer" style="display: none;">
+        <label>Select Location on Map</label>
+        <div id="map" style="height: 300px; border-radius: 8px;"></div>
+      </div>
+
+      <button type="submit" class="btn">Register</button>
+      <button type="button" class="btn google-btn" onclick="loginWithGoogle()">
+        <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google logo" />
+        Continue with Google
+      </button>
+    </form>
+  </div>
+
+  <!-- Leaflet.js -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Your custom JS -->
+  <script src="register.js"></script>
+</body>
+</html>
